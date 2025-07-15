@@ -108,5 +108,12 @@
 
   <!-- Link to external JavaScript file -->
   <script src="script.js"></script>
+
+  <!-- ✅ Option 2: Mobile user alert -->
+  <script>
+    if (window.innerWidth < 768) {
+      alert("⚠️ This site is only available in desktop mode.\nPlease turn on 'Desktop site' from your browser menu.");
+    }
+  </script>
 </body>
 </html>
