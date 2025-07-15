@@ -1,0 +1,323 @@
+/* Reset default margin, padding, and set font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Border included in total size */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Main body styling */
+body {
+  min-height: 100vh; /* Full screen height */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  background: linear-gradient(-45deg, #f9d3ec, #d0e7ff, #fde9b4, #dcd3ff); /* Animated gradient background */
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite; /* Gradient animation */
+  transition: background 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background animation keyframes */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Dark mode body background */
+body.dark {
+  background: #121212;
+  color: #fff;
+  transition: background 0.6s ease;
+}
+
+/* Main form container */
+.container {
+  position: relative;
+  width: 850px;
+  height: 550px;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  transition: 0.5s ease;
+  z-index: 1;
+}
+
+/* Dark mode container background */
+body.dark .container {
+  background: #1f1f1f;
+}
+
+/* Common form box styling */
+.form-box {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  padding: 40px;
+  transition: 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Login form on right */
+.form-box.login {
+  right: 0;
+}
+
+/* Register form on left and hidden initially */
+.form-box.register {
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* When active class added, show register form */
+.container.active .form-box.register {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+/* Hide login form when register is active */
+.container.active .form-box.login {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Basic form layout */
+form {
+  width: 100%;
+}
+
+/* Form title */
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Input box wrapper */
+.input-box {
+  position: relative;
+  margin: 20px 0;
+}
+
+/* Input field design */
+.input-box input {
+  width: 100%;
+  padding: 14px 20px;
+  background: #eee;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Dark mode input field background */
+body.dark .input-box input {
+  background: #333;
+  color: #fff;
+}
+
+/* Icon inside input */
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Forgot password link */
+.forgot-link {
+  margin: 10px 0;
+  text-align: right;
+}
+
+.forgot-link a {
+  font-size: 14px;
+  color: purple;
+  text-decoration: none;
+}
+
+/* Submit button */
+.btn {
+  width: 100%;
+  padding: 14px;
+  background: #7494ec;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Social login buttons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Each social icon */
+.social-icons a {
+  font-size: 22px;
+  color: #333;
+  background: #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 0 6px;
+  text-decoration: none;
+}
+
+/* Dark mode icons */
+body.dark .social-icons a {
+  background: #444;
+  color: #fff;
+}
+
+/* Toggle panel (left or right side) */
+.toggle-box {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: #7494ec;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  z-index: 1;
+  transition: 0.6s ease-in-out;
+}
+
+/* Move toggle to right when active */
+.container.active .toggle-box {
+  left: 50%;
+}
+
+/* Toggle panel content */
+.toggle-box h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.toggle-box p {
+  margin-bottom: 20px;
+}
+
+.toggle-box button {
+  padding: 10px 24px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: #222;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* Star and heart container background elements */
+.stars, .hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Star shape (small circle) */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+/* Star animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Heart shape created with rotation */
+.heart {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: pink;
+  transform: rotate(45deg);
+  animation: floatUp 10s linear infinite;
+}
+
+/* Heart upper round parts */
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: pink;
+  border-radius: 50%;
+}
+
+/* Heart top part */
+.heart::before {
+  top: -7.5px;
+  left: 0;
+}
+
+/* Heart left side */
+.heart::after {
+  left: -7.5px;
+  top: 0;
+}
+
+/* Floating heart animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive layout for mobile */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
+  .form-box, .toggle-box {
+    width: 100%;
+    position: static;
+    height: auto;
+  }
+}

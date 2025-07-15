@@ -1,0 +1,112 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic settings for character encoding and screen size -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Page title shown in browser tab -->
+  <title>Login/Register</title>
+
+  <!-- Link to boxicons for social and input icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Button to toggle dark mode on/off -->
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+  <!-- Container to hold animated stars in dark mode -->
+  <div class="stars" id="starContainer"></div>
+
+  <!-- Container to hold animated hearts in light mode -->
+  <div class="hearts" id="heartContainer"></div>
+
+  <!-- Main container that holds login/register forms and toggle panel -->
+  <div class="container" id="container">
+
+    <!-- Login form box -->
+    <div class="form-box login">
+      <form>
+        <h1>Login</h1>
+
+        <!-- Username input -->
+        <div class="input-box">
+          <input type="text" placeholder="Username" required>
+          <i class='bx bxs-user'></i>
+        </div>
+
+        <!-- Password input -->
+        <div class="input-box">
+          <input type="password" placeholder="Password" required>
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+
+        <!-- Forgot password link -->
+        <div class="forgot-link">
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <!-- Submit button for login -->
+        <button type="submit" class="btn">Login</button>
+
+        <!-- Social login icons -->
+        <div class="social-icons">
+          <a href="#"><i class='bx bxl-google'></i></a>
+          <a href="#"><i class='bx bxl-facebook'></i></a>
+          <a href="#"><i class='bx bxl-github'></i></a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Register form box -->
+    <div class="form-box register">
+      <form>
+        <h1>Register</h1>
+
+        <!-- Username input -->
+        <div class="input-box">
+          <input type="text" placeholder="Username" required>
+          <i class='bx bxs-user'></i>
+        </div>
+
+        <!-- Email input -->
+        <div class="input-box">
+          <input type="email" placeholder="Email" required>
+          <i class='bx bxs-envelope'></i>
+        </div>
+
+        <!-- Password input -->
+        <div class="input-box">
+          <input type="password" placeholder="Password" required>
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+
+        <!-- Submit button for registration -->
+        <button type="submit" class="btn">Register</button>
+
+        <!-- Social register icons -->
+        <div class="social-icons">
+          <a href="#"><i class='bx bxl-google'></i></a>
+          <a href="#"><i class='bx bxl-facebook'></i></a>
+          <a href="#"><i class='bx bxl-github'></i></a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Toggle panel box (to switch between login/register) -->
+    <div class="toggle-box">
+      <h1 id="toggleTitle">Welcome Back!</h1>
+      <p id="toggleText">Already have an account?</p>
+      <button onclick="toggleForm()" id="toggleBtn">Login</button>
+    </div>
+  </div>
+
+  <!-- Link to external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
