@@ -1,3 +1,9 @@
+// ✅ Agar device ka screen width 991px se chhota hai to access roko
+if (window.innerWidth < 991) {
+  alert("This site is only available on desktop!");
+  document.body.innerHTML = "<h2 style='color: red; text-align: center; margin-top: 40vh;'>This site is only available on desktop.</h2>";
+}
+
 // Container, toggle buttons aur text elements ko access karo
 const container = document.getElementById('container');
 const toggleBtn = document.getElementById('toggleBtn');
